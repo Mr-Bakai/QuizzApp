@@ -6,120 +6,87 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.discover.DiscoverFragment">
 
-
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
         android:src="@drawable/ic_quizz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/imageStyle" />
 
     <TextView
-        android:id="@+id/questionAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="43dp"
-        android:text="Question amount: 10"
-        android:textColor="#A9A9A9"
-        android:textSize="12sp"
+        android:id="@+id/textQuestionAmount"
+        android:text="Question amount: "
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        style="@style/textAmountQStyle" />
 
+    <TextView
+        android:id="@+id/textAmount"
+        android:text="10"
+        app:layout_constraintBottom_toBottomOf="@+id/textQuestionAmount"
+        app:layout_constraintStart_toEndOf="@+id/textQuestionAmount"
+        app:layout_constraintTop_toTopOf="@+id/textQuestionAmount"
+        style="@style/textAmountStyle" />
 
     <SeekBar
         android:id="@+id/seekBar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:forceHasOverlappingRendering="true"
-        android:progressTint="#BE52F2"
-        android:thumbTint="#BE52F2"
-        android:thumbOffset="3dp"
-        android:paddingStart="1dp"
-        android:paddingEnd="1dp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/questionAmount" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textQuestionAmount"
+        style="@style/seekBarCatStyle" />
 
     <TextView
         android:id="@+id/textCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:text="Category"
-        android:textColor="#A9A9A9"
-        android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/cardSpinnerCategory"
-        app:layout_constraintStart_toStartOf="@+id/cardSpinnerCategory" />
+        app:layout_constraintStart_toStartOf="@+id/cardSpinnerCategory"
+        style="@style/textCategoryStyle" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardSpinnerCategory"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="37dp"
-        android:padding="14dp"
-        app:cardCornerRadius="6dp"
-        app:cardElevation="30dp"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar">
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        style="@style/cardViewStyle">
 
         <androidx.appcompat.widget.AppCompatSpinner
+            android:visibility="visible"
             android:id="@+id/spinnerCategory"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:entries="@array/category" />
-
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/textDifficulty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
         android:text="Difficulty"
-        android:textSize="12sp"
-        android:textColor="#A9A9A9"
-        app:layout_constraintBottom_toTopOf="@+id/materialCardView"
-        app:layout_constraintStart_toStartOf="@+id/materialCardView" />
+        app:layout_constraintBottom_toTopOf="@+id/cardSpinnerDifficulty"
+        app:layout_constraintStart_toStartOf="@+id/cardSpinnerDifficulty"
+        style="@style/textDifficultyStyle" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="37dp"
-        android:padding="14dp"
-        app:cardCornerRadius="6dp"
-        app:cardElevation="30dp"
+        android:id="@+id/cardSpinnerDifficulty"
+        style="@style/cardViewStyle"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/cardSpinnerCategory">
 
         <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/Difficulty"
+            android:id="@+id/spinnerDifficulty"
+            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:entries="@array/difficulty" />
-
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/startBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="88dp"
-        android:layout_marginTop="64dp"
-        android:backgroundTint="#6979F8"
-        android:paddingVertical="13dp"
         android:text="Start"
-        app:cornerRadius="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+        app:layout_constraintTop_toBottomOf="@+id/cardSpinnerDifficulty"
+        style="@style/startBtnStyle" />
 
 
     <androidx.constraintlayout.widget.Guideline
