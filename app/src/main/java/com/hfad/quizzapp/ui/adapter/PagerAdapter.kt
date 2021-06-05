@@ -1,11 +1,11 @@
 package com.hfad.ad4assignment3.ui.adapter
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.hfad.quizzapp.ui.fragments.home.HomeFragment
 
 class PagerAdapter(
     private val items: ArrayList<Fragment>,
-    fragmentActivity: FragmentActivity
+    fragmentActivity: HomeFragment
 ) : FragmentStateAdapter(fragmentActivity) {
 
     override fun getItemCount(): Int {
