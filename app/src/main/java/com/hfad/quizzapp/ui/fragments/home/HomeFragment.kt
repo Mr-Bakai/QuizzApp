@@ -3,7 +3,7 @@ import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.hfad.quizzapp.core.ui.base.BaseFragment
-import com.hfad.quizzapp.ui.adapter.PagerAdapter
+import com.hfad.quizzapp.ui.fragments.home.adapter.PagerAdapter
 import com.hfad.quizzapp.R
 import com.hfad.quizzapp.databinding.HomeFragmentBinding
 import com.hfad.quizzapp.ui.fragments.discover.DiscoverFragment

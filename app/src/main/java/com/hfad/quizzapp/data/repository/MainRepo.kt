@@ -10,6 +10,5 @@ class MainRepo(private val api: QuizApi) {
 
     suspend fun getCategory() = api.getCategory()
 
-    suspend fun getQuiz() =
-        api.getQuiz(model.amount, model.category, model.difficulty)
+    suspend fun getQuiz() = api.getQuiz(model.amount, model.category, model.difficulty)
 }
