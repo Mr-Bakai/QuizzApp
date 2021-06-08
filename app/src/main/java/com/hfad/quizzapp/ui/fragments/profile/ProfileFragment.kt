@@ -1,12 +1,12 @@
 package com.hfad.quizzapp.ui.fragments.profile
 
-import com.example.core.ui.base.BaseFragment
+import com.hfad.quizzapp.core.ui.base.BaseFragment
 import com.hfad.quizzapp.databinding.FragmentProfileBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ProfileFragment : BaseFragment<FragmentProfileBinding, ProfileViewModel>(
-    FragmentProfileBinding::inflate,
-    ProfileViewModel::class.java
-) {
+class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBinding::inflate) {
+
+    override val viewModel: ProfileViewModel by viewModel()
 
     override fun setupLiveData() {}
     override fun setupUI() {}

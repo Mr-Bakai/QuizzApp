@@ -1,16 +1,20 @@
 package com.hfad.quizzapp.ui.fragments.quiz
 
-import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.core.ui.base.BaseViewModel
+import com.hfad.quizzapp.data.model.quizModel.QuizModel
 import com.hfad.quizzapp.data.repository.MainRepo
 import kotlinx.coroutines.launch
+import retrofit2.Response
 
 class QuizViewModel(private val repo: MainRepo) : BaseViewModel() {
 
-    fun getQuiz(amount: Int){
+    var quizLiveData = MutableLiveData<Response<QuizModel>>()
+
+    fun getQuiz() {
         viewModelScope.launch {
-            Log.e("QUIZ",repo.getQuiz(amount)!!.body().toString())
+            quizLiveData.value = repo.getQuiz()
         }
     }
 }

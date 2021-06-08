@@ -1,15 +1,14 @@
 package com.hfad.quizzapp.ui.fragments.quiz
-
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hfad.quizzapp.data.model.quizModel.Results
 import com.hfad.quizzapp.databinding.QuizItemBinding
-import com.hfad.quizzapp.data.model.Quiz
 
 class QuizAdapter(
-    private val quiz: List<Quiz>,
+    private val quiz: List<Results>,
     private val listener: OnQuiz
 ) :
     RecyclerView.Adapter<QuizAdapter.ViewHolder>() {
@@ -34,15 +33,18 @@ class QuizAdapter(
 
     class ViewHolder(private val view: QuizItemBinding) : RecyclerView.ViewHolder(view.root) {
         @SuppressLint("SetTextI18n")
-        fun onBind(quiz: Quiz) {
-            view.textFirst.text = quiz.category
-            view.textSecond.text = quiz.category
-            view.textThird.text = quiz.category
-            view.textFour.text = quiz.category
+        fun onBind(quiz: Results) {
+
+            view.textQuestion.text = quiz.question
+            view.textFirst.text = quiz.correctAnswer
+            view.textSecond.text = quiz.incorrectAnswers[0]
+            view.textThird.text = quiz.incorrectAnswers[1]
+            view.textFour.text = quiz.incorrectAnswers[2]
+
         }
     }
 }
 
 interface OnQuiz {
-    fun onQuizClick(quiz: Quiz)
+    fun onQuizClick(quiz: Results)
 }

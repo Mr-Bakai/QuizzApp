@@ -4,7 +4,6 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
-
     <string-array name="category">
         <item>All</item>
         <item>Countries</item>
@@ -14,9 +13,9 @@
     </string-array>
 
     <string-array name="difficulty">
-        <item>Easy</item>
-        <item>Normal</item>
-        <item>Hard</item>
+        <item>easy</item>
+        <item>medium</item>
+        <item>hard</item>
     </string-array>
 
 </resources>

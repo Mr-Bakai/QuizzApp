@@ -8,62 +8,62 @@
 
     <ImageView
         android:id="@+id/imageView"
+        style="@style/imageStyle"
         android:src="@drawable/ic_quizz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/imageStyle" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textQuestionAmount"
+        style="@style/textAmountQStyle"
         android:text="Question amount: "
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        style="@style/textAmountQStyle" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/textAmount"
+        style="@style/textAmountStyle"
         android:text="10"
         app:layout_constraintBottom_toBottomOf="@+id/textQuestionAmount"
         app:layout_constraintStart_toEndOf="@+id/textQuestionAmount"
-        app:layout_constraintTop_toTopOf="@+id/textQuestionAmount"
-        style="@style/textAmountStyle" />
+        app:layout_constraintTop_toTopOf="@+id/textQuestionAmount" />
 
     <SeekBar
         android:id="@+id/seekBar"
+        style="@style/seekBarCatStyle"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/textQuestionAmount"
-        style="@style/seekBarCatStyle" />
+        app:layout_constraintTop_toBottomOf="@+id/textQuestionAmount" />
 
     <TextView
         android:id="@+id/textCategory"
+        style="@style/textCategoryStyle"
         android:text="Category"
         app:layout_constraintBottom_toTopOf="@+id/cardSpinnerCategory"
-        app:layout_constraintStart_toStartOf="@+id/cardSpinnerCategory"
-        style="@style/textCategoryStyle" />
+        app:layout_constraintStart_toStartOf="@+id/cardSpinnerCategory" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardSpinnerCategory"
+        style="@style/cardViewStyle"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar"
-        style="@style/cardViewStyle">
+        app:layout_constraintTop_toBottomOf="@+id/seekBar">
 
         <androidx.appcompat.widget.AppCompatSpinner
-            android:visibility="visible"
             android:id="@+id/spinnerCategory"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:entries="@array/category" />
+            android:entries="@array/category"
+            android:visibility="visible" />
     </com.google.android.material.card.MaterialCardView>
 
     <TextView
         android:id="@+id/textDifficulty"
+        style="@style/textDifficultyStyle"
         android:text="Difficulty"
         app:layout_constraintBottom_toTopOf="@+id/cardSpinnerDifficulty"
-        app:layout_constraintStart_toStartOf="@+id/cardSpinnerDifficulty"
-        style="@style/textDifficultyStyle" />
+        app:layout_constraintStart_toStartOf="@+id/cardSpinnerDifficulty" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardSpinnerDifficulty"
@@ -74,19 +74,19 @@
 
         <androidx.appcompat.widget.AppCompatSpinner
             android:id="@+id/spinnerDifficulty"
-            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:entries="@array/difficulty" />
+            android:entries="@array/difficulty"
+            android:visibility="visible" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/startBtn"
+        style="@style/startBtnStyle"
         android:text="Start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardSpinnerDifficulty"
-        style="@style/startBtnStyle" />
+        app:layout_constraintTop_toBottomOf="@+id/cardSpinnerDifficulty" />
 
 
     <androidx.constraintlayout.widget.Guideline

@@ -16,6 +16,6 @@ val viewModelModule = module {
     viewModel { MainViewModel() }
     viewModel { HomeViewModel() }
     viewModel { ProfileViewModel() }
-    viewModel { DiscoverViewModel() }
+    viewModel { DiscoverViewModel(get()) }
     viewModel { QuizViewModel(get()) }
 }

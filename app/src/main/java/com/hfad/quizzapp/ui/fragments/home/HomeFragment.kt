@@ -2,22 +2,21 @@ package com.hfad.quizzapp.ui.fragments.home
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.example.core.ui.base.BaseFragment
-import com.hfad.ad4assignment3.ui.adapter.PagerAdapter
+import com.hfad.quizzapp.core.ui.base.BaseFragment
+import com.hfad.quizzapp.ui.adapter.PagerAdapter
 import com.hfad.quizzapp.R
 import com.hfad.quizzapp.databinding.HomeFragmentBinding
 import com.hfad.quizzapp.ui.fragments.discover.DiscoverFragment
 import com.hfad.quizzapp.ui.fragments.map.MapFragment
 import com.hfad.quizzapp.ui.fragments.profile.ProfileFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeFragment : BaseFragment<HomeFragmentBinding, HomeViewModel>(
-    HomeFragmentBinding::inflate,
-    HomeViewModel::class.java
-) {
+class HomeFragment : BaseFragment<HomeFragmentBinding>(HomeFragmentBinding::inflate) {
 
+    override val viewModel: HomeViewModel by viewModel()
     private lateinit var previewMenuItem: MenuItem
-    override fun setupLiveData() {
-    }
+
+    override fun setupLiveData(){}
 
     override fun setupUI() {
 

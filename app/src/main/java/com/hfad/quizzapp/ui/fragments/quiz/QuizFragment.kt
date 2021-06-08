@@ -1,35 +1,26 @@
 package com.hfad.quizzapp.ui.fragments.quiz
 
-import com.example.core.ui.base.BaseFragment
-import com.example.core.ui.base.BaseViewModel
+import com.hfad.quizzapp.core.ui.base.BaseFragment
 import com.hfad.quizzapp.databinding.QuizFragmentBinding
-import com.hfad.quizzapp.data.model.Quiz
+import com.hfad.quizzapp.data.model.quizModel.Results
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class QuizFragment : BaseFragment<QuizFragmentBinding, BaseViewModel>(
+class QuizFragment : BaseFragment<QuizFragmentBinding>(
     QuizFragmentBinding::inflate,
-    BaseViewModel::class.java
 ), OnQuiz {
 
+    override val viewModel: QuizViewModel by viewModel()
+
+    override fun setupUI() {}
+
     override fun setupLiveData() {
-
-    }
-
-    override fun setupUI() {
-        binding.recyclerView.apply {
-            this.adapter = QuizAdapter(listOf(
-                Quiz("First one "),
-                Quiz("Second one "),
-                Quiz("Third one "),
-                Quiz("Fourth")
-            ), this@QuizFragment)
+        viewModel.getQuiz()
+        viewModel.quizLiveData.observe(viewLifecycleOwner) {
+            binding.recyclerView.apply {
+                this.adapter = it.body()?.let { it1 -> QuizAdapter(it1.results, this@QuizFragment) }
+            }
         }
     }
 
-    companion object {
-        fun newInstance() = QuizFragment()
-    }
-
-    override fun onQuizClick(quiz: Quiz) {
-
-    }
+    override fun onQuizClick(quiz: Results) {}
 }
